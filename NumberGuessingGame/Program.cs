@@ -7,6 +7,8 @@ int randomNumber = random.Next(1, 101);
 
 int option;
 int playerChances;
+int playerAttempts = 0;
+int playerGuess;
 
 while (true)
 {
@@ -41,4 +43,40 @@ while (true)
     }
 
     Console.WriteLine("\nInvalid option. Please try again.\n");
+}
+
+Console.WriteLine(randomNumber);
+
+while (playerAttempts < playerChances)
+{
+    Console.Write("Enter your guess: ");
+    
+    bool isValid = int.TryParse(Console.ReadLine(), out playerGuess);
+
+    if (!isValid)
+    {
+        Console.WriteLine("Invalid input! Please enter a number.");
+    }
+
+    if (isValid && playerGuess == randomNumber)
+    {
+        playerAttempts++;
+        Console.WriteLine($"Congratulations! You guessed the correct number in {playerAttempts} attempts!");
+        break;
+    }
+    else if (isValid && playerGuess > randomNumber)
+    {
+        playerAttempts++;
+        Console.WriteLine($"Incorrect! The number is less than {playerGuess}");
+    }
+    else if (isValid && playerGuess < randomNumber)
+    {
+        playerAttempts++;
+        Console.WriteLine($"Incorrect! The number is greater than {playerGuess}");
+    }
+}
+
+if (playerAttempts == playerChances)
+{
+    Console.WriteLine($"\nYou loose :( the correct number was {randomNumber}.");
 }
