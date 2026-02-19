@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Welcome to the Number Guessing Game!");
+Console.WriteLine("I'm thinking of a number between 1 and 100.");
+Console.WriteLine("You have some chances to guess the correct number.");
+
