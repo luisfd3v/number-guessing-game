@@ -22,30 +22,25 @@ while (true)
 
     if (option == 1)
     {
-        Console.WriteLine("Easy");
+        Console.WriteLine("Great! You have selected the Easy difficulty level.\r\nLet's start the game!\n");
         playerChances = 10;
-        Console.WriteLine(playerChances);
         break;
     }
     else if (option == 2)
     {
-        Console.WriteLine("Medium");
+        Console.WriteLine("Great! You have selected the Medium difficulty level.\r\nLet's start the game!\n");
         playerChances = 5;
-        Console.WriteLine(playerChances);
         break;
     }
     else if (option == 3)
     {
-        Console.WriteLine("Hard");
+        Console.WriteLine("Great! You have selected the Hard difficulty level.\r\nLet's start the game!\n");
         playerChances = 3;
-        Console.WriteLine(playerChances);
         break;
     }
 
     Console.WriteLine("\nInvalid option. Please try again.\n");
 }
-
-Console.WriteLine(randomNumber);
 
 while (playerAttempts < playerChances)
 {
