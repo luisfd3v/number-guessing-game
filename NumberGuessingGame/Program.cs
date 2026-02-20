@@ -51,22 +51,22 @@ while (playerAttempts < playerChances)
     if (!isValid)
     {
         Console.WriteLine("Invalid input! Please enter a number.");
+        continue;
     }
 
-    if (isValid && playerGuess == randomNumber)
+    playerAttempts++;
+
+    if (playerGuess == randomNumber)
     {
-        playerAttempts++;
         Console.WriteLine($"Congratulations! You guessed the correct number in {playerAttempts} attempts!");
         break;
     }
-    else if (isValid && playerGuess > randomNumber)
+    else if (playerGuess > randomNumber)
     {
-        playerAttempts++;
         Console.WriteLine($"Incorrect! The number is less than {playerGuess}");
     }
-    else if (isValid && playerGuess < randomNumber)
+    else if (playerGuess < randomNumber)
     {
-        playerAttempts++;
         Console.WriteLine($"Incorrect! The number is greater than {playerGuess}");
     }
 }
